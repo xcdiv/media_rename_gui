@@ -28,64 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ischangeNum = new System.Windows.Forms.CheckBox();
+            this.fileEXchange = new System.Windows.Forms.CheckBox();
+            this.fileEX = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.Undo_changes = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 323);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(478, 21);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "c:\\ouput\\";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(594, 323);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(891, 484);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 3;
             this.button1.Text = "改名";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.AllowDrop = true;
-            this.button2.Location = new System.Drawing.Point(497, 323);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "输出目录";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // listBox1
             // 
             this.listBox1.AllowDrop = true;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(13, 12);
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(20, 18);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(469, 304);
+            this.listBox1.Size = new System.Drawing.Size(702, 454);
             this.listBox1.TabIndex = 4;
             this.listBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox1_DragDrop);
             this.listBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox1_DragEnter);
             // 
+            // ischangeNum
+            // 
+            this.ischangeNum.AutoSize = true;
+            this.ischangeNum.Checked = true;
+            this.ischangeNum.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ischangeNum.Location = new System.Drawing.Point(746, 18);
+            this.ischangeNum.Name = "ischangeNum";
+            this.ischangeNum.Size = new System.Drawing.Size(205, 22);
+            this.ischangeNum.TabIndex = 6;
+            this.ischangeNum.Text = "修改文件名从1到累加";
+            this.ischangeNum.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ischangeNum.UseVisualStyleBackColor = true;
+            // 
+            // fileEXchange
+            // 
+            this.fileEXchange.AutoSize = true;
+            this.fileEXchange.Location = new System.Drawing.Point(746, 57);
+            this.fileEXchange.Name = "fileEXchange";
+            this.fileEXchange.Size = new System.Drawing.Size(178, 22);
+            this.fileEXchange.TabIndex = 6;
+            this.fileEXchange.Text = "修改文件名后缀为";
+            this.fileEXchange.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.fileEXchange.UseVisualStyleBackColor = true;
+            this.fileEXchange.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // fileEX
+            // 
+            this.fileEX.Enabled = false;
+            this.fileEX.Location = new System.Drawing.Point(743, 89);
+            this.fileEX.Margin = new System.Windows.Forms.Padding(4);
+            this.fileEX.Name = "fileEX";
+            this.fileEX.Size = new System.Drawing.Size(231, 28);
+            this.fileEX.TabIndex = 2;
+            this.fileEX.Text = ".ts";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(1469, -338);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(178, 22);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "修改文件名后缀为";
+            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // Undo_changes
+            // 
+            this.Undo_changes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Undo_changes.Location = new System.Drawing.Point(892, 438);
+            this.Undo_changes.Margin = new System.Windows.Forms.Padding(4);
+            this.Undo_changes.Name = "Undo_changes";
+            this.Undo_changes.Size = new System.Drawing.Size(112, 34);
+            this.Undo_changes.TabIndex = 3;
+            this.Undo_changes.Text = "撤销修改";
+            this.Undo_changes.UseVisualStyleBackColor = true;
+            this.Undo_changes.Click += new System.EventHandler(this.Undo_changes_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 374);
+            this.ClientSize = new System.Drawing.Size(1017, 561);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.fileEXchange);
+            this.Controls.Add(this.ischangeNum);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.fileEX);
+            this.Controls.Add(this.Undo_changes);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "河南有线节目注入批量改名软件";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,10 +142,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.CheckBox ischangeNum;
+        private System.Windows.Forms.CheckBox fileEXchange;
+        private System.Windows.Forms.TextBox fileEX;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button Undo_changes;
 
 
     }
