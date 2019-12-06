@@ -125,18 +125,32 @@ namespace rename_gui
 
 
             }
-
-
-
-
+            save_log(0);
             MessageBox.Show("更名" + count + "文件");
 
         }
 
-        private void save_log()
+        private void save_log(int type)
         {
 
 
+            using (StreamWriter sw = new StreamWriter(System.Environment.CurrentDirectory + "\\" + string.Format("{0:yyyy_MM_dd_HH_mm_ss}", DateTime.Now) + ".txt")) 
+            {
+                StringBuilder sr = new StringBuilder();
+
+                foreach (names fn in filenameList) {
+                    if (type == 0)
+                    {
+                        sr.AppendFormat("{0}\t{1}\t{2}\r\n", fn.oldname, fn.newname, fn.status);
+                    }
+                    else {
+                        sr.AppendFormat("{1}\t{0}\t{2}\r\n", fn.oldname, fn.newname, fn.status);
+                    }
+                }
+
+                sw.Write(sr.ToString());
+            }
+ 
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -178,6 +192,7 @@ namespace rename_gui
                 }
 
             }
+            save_log(1);
             MessageBox.Show("还原" + count + "文件");
         }
     }
